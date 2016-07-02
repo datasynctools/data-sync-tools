@@ -1,0 +1,1 @@
+select * from sync_node;

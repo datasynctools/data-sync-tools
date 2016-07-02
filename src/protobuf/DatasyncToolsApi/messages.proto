@@ -1,0 +1,230 @@
+syntax = "proto2";
+
+//option (.google.protobuf.swift_file_options).entities_access_control = PublicEntities;
+
+message ProtoRequestSyncEntityMessageResponse {
+    required SyncRequestEntityMessageResponseResult result = 1;
+    required string result_msg                             = 2;
+    optional ProtoSyncEntityMessageRequest request         = 3;
+}
+
+enum SyncRequestEntityMessageResponseResult {
+   HasMsgs           = 1;
+   NoMsgs            = 2;
+   ErrorCreatingMsgs = 3;
+}
+
+message ProtoSyncEntityMessageRequest {
+    required bool is_delete                     = 1;
+    required string transaction_bind_id         = 2;
+    repeated ProtoSyncDataMessagesRequest items = 3;
+}
+
+message ProtoSyncDataMessagesRequest {
+	required string entity_plural_name        = 1;
+	repeated ProtoSyncDataMessageRequest msgs = 2;
+}
+
+message ProtoSyncDataMessageRequest {
+    required string record_id                  = 1;
+    required string record_hash                = 2; //The hash of the recordData in this message
+    optional string last_known_peer_hash       = 3;
+    required SentSyncStateEnum sent_sync_state = 4;
+    required uint32 record_bytes_size          = 5;
+    required bytes record_data                 = 6; //[UInt8]
+}
+
+message ProtoSyncEntityMessageResponse {
+    required string transaction_bind_id             = 1;
+    repeated ProtoSyncDataMessagesResponse items    = 2;
+    required SyncEntityMessageResponseResult result = 3;
+    required string result_msg                      = 4;
+    //repeated string CompletedEntities               = 5;
+}
+
+enum SyncEntityMessageResponseResult {
+   OK    = 1;
+   Error = 2;
+}
+
+message ProtoSyncDataMessagesResponse {
+	required string entity_plural_name         = 1;
+	repeated ProtoSyncDataMessageResponse msgs = 2;
+}
+
+message ProtoSyncDataMessageResponse {
+    required string record_id                  = 1;
+    //If the request hash is not present, than the sync_state must be AckedFastBatch or
+    //AckedRecordLevelConflictResolvedSeparateFieldsChanged. If not, than all optional value
+    //must be present.
+    optional string request_hash               = 2;
+    required string response_hash              = 3;
+    required AckSyncStateEnum sync_state       = 4;
+    //If the request hash is not present, than the sync_state must be AckedFastBatch or
+    //AckedRecordLevelConflictResolvedSeparateFieldsChanged. If not, than all optional value
+    //must be present.
+    optional uint32 record_bytes_size          = 5;
+    //If the request hash is not present, than the sync_state must be AckedFastBatch or
+    //AckedRecordLevelConflictResolvedSeparateFieldsChanged. If not, than all optional value
+    //must be present.
+    optional bytes record_data                 = 6; //[UInt8]
+}
+
+enum SentSyncStateEnum {
+    /* COMMENTED OUT
+    Undefined                                             = 0;
+    */
+    PersistedNeverSentToPeer                              = 1;
+    PersistedFirstTimeSentToPeer                          = 2;
+    PersistedStandardSentToPeer                           = 3;
+    PersistedFastDeleted                                  = 4;
+    /* COMMENTED OUT
+    AckFastBatch                                          = 21;
+    AckRecordLevelConflictResolvedSeparateFieldsChanged   = 22;
+    AckFieldLevelConflictwithNoAutoResolverAvailable      = 23;
+    AckFieldLevelConflictResolvedWithAutoResolver         = 24;
+    AckFieldLevelConflictWithNoAutoResolverResolution     = 25;
+    AckDeleteAndUpdateConflictWithNoAutoResolverAvailable = 26;
+    AckDeleteAndUpdateConflictWithNoAutoResolution        = 27;
+    AckDeleteAndUpdateConflictWithAutoResolution          = 28;
+    */
+}
+
+enum AckSyncStateEnum {
+    /* COMMENTED OUT
+    Undefined                                             = 0;
+    PersistedNeverSentToPeer                              = 1;
+    PersistedFirstTimeSentToPeer                          = 2;
+    PersistedStandardSentToPeer                           = 3;
+    PersistedFastDeleted                                  = 4;
+    */
+    AckFastBatch                                          = 21;
+    AckRecordLevelConflictResolvedSeparateFieldsChanged   = 22;
+    AckFieldLevelConflictwithNoAutoResolverAvailable      = 23;
+    AckFieldLevelConflictResolvedWithAutoResolver         = 24;
+    AckFieldLevelConflictWithNoAutoResolverResolution     = 25;
+    AckDeleteAndUpdateConflictWithNoAutoResolverAvailable = 26;
+    AckDeleteAndUpdateConflictWithNoAutoResolution        = 27;
+    AckDeleteAndUpdateConflictWithAutoResolution          = 28;
+}
+
+
+
+message ProtoRecord {
+    repeated ProtoField fields = 1;
+}
+
+/*
+enum CanonicalFieldType {
+	STRING = 0;
+    INT    = 1;
+    DATE   = 2;
+    BOOL   = 3;
+    DOUBLE = 4;
+    FLOAT  = 5;
+}
+*/
+
+enum ProtoEncodedFieldType {
+    DOUBLE   = 0;
+	FLOAT    = 1;
+	INT32    = 2;
+	INT64    = 3;
+	UINT32   = 4;
+	UINT64   = 5;
+	SINT32   = 6;
+	SINT64   = 7;
+	FIXED32  = 8;
+	FIXED64  = 9;
+	SFIXED32 = 10;
+	SFIXED64 = 11;
+	BOOL     = 12;
+	STRING   = 13;
+	BYTES    = 14;
+}
+message ProtoField {
+	required ProtoEncodedFieldType encoded_field_type  = 1;
+	required string                field_name          = 2;
+	required bytes                 field_value         = 3;
+	//required CanonicalFieldType canonical_field_type = 4;
+	/*
+	optional double    field_value_double   = 3;
+	optional float     field_value_float    = 4;
+	optional int32     field_value_int32    = 5;
+	optional int64     field_value_int64    = 6;
+	optional uint32    field_value_uint32   = 7;
+	optional uint64    field_value_uint64   = 8;
+	optional sint32    field_value_sint32   = 9;
+	optional sint64    field_value_sint64   = 10;
+	optional fixed32   field_value_fixed32  = 11;
+	optional fixed64   field_value_fixed64  = 12;
+	optional sfixed32  field_value_sfixed32 = 13;
+	optional sfixed64  field_value_sfixed64 = 14;
+	optional bool  	   field_value_bool 	= 15;
+	optional string    field_value_string 	= 16;
+	optional bytes 	   field_value_bytes 	= 17;
+	*/
+}
+
+//FieldType Messages:
+
+//FieldType 0
+message ProtoFieldTypeDouble {
+	required double field_value = 1;
+}
+//FieldType 1
+message ProtoFieldTypeFloat {
+	required float field_value = 1;
+}
+//FieldType 2
+message ProtoFieldTypeInt32 {
+	required int32 field_value = 1;
+}
+//FieldType 3
+message ProtoFieldTypeInt64 {
+	required int64 field_value = 1;
+}
+//FieldType 4
+message ProtoFieldTypeUint32 {
+	required uint32 field_value = 1;
+}
+//FieldType 5
+message ProtoFieldTypeUint64 {
+	required uint64 field_value = 1;
+}
+//FieldType 6
+message ProtoFieldTypeSint32 {
+	required sint32 field_value = 1;
+}
+//FieldType 7
+message ProtoFieldTypeSint64 {
+	required sint64 field_value = 1;
+}
+//FieldType 8
+message ProtoFieldTypeFixed32 {
+	required fixed32 field_value = 1;
+}
+//FieldType 9
+message ProtoFieldTypeFixed64 {
+	required fixed64 field_value = 1;
+}
+//FieldType 10
+message ProtoFieldTypeSfixed32 {
+	required sfixed32 field_value = 1;
+}
+//FieldType 11
+message ProtoFieldTypeSfixed64 {
+	required sfixed64 field_value = 1;
+}
+//FieldType 12
+message ProtoFieldTypeBool {
+	required bool field_value = 1;
+}
+//FieldType 13
+message ProtoFieldTypeString {
+	required string field_value = 1;
+}
+//FieldType 14
+message ProtoFieldTypeBytes {
+	required bytes field_value = 1;
+}

@@ -1,0 +1,43 @@
+#How to run a command inline
+http://stackoverflow.com/questions/22824457/how-to-run-in-line-sql-script-in-the-command-line
+"C:\..\psql.exe" -h my_server_host -U usr -c 'CREATE DATABASE test;' postgres
+
+#Drop Database and Create Database
+\i /Users/doug/Documents/GitHub/threads/src/sql/postgressql/drop-database.sql
+\i /Users/doug/Documents/GitHub/threads/src/sql/postgressql/create-database.sql
+
+#Drop and Create Tables
+\i /Users/doug/Documents/GitHub/threads/src/sql/common/drop-data-sync-tools.sql
+\i /Users/doug/Documents/GitHub/threads/src/sql/postgressql/create-data-sync-tools.sql
+
+#Create Test Data
+\i /Users/doug/Documents/GitHub/threads/src/sql/common/create-test-data.sql
+
+#Drop and Create Tables and Create Test Data
+\i /Users/doug/Documents/GitHub/threads/src/sql/common/drop-data-sync-tools.sql
+\i /Users/doug/Documents/GitHub/threads/src/sql/postgressql/create-data-sync-tools.sql
+\i /Users/doug/Documents/GitHub/threads/src/sql/common/create-test-data.sql
+
+#Query for Queuing
+\i /Users/doug/Documents/GitHub/threads/src/sql/common/initializing-insert-check-count.sql
+\i /Users/doug/Documents/GitHub/threads/src/sql/common/initializing-update-check-count.sql
+
+#Mark for Queuing
+\i /Users/doug/Documents/GitHub/threads/src/sql/common/queuing-insert.sql
+\i /Users/doug/Documents/GitHub/threads/src/sql/common/queuing-update.sql
+
+#Show all data
+\i /Users/doug/Documents/GitHub/threads/src/sql/common/show-test-data.sql
+
+#Ad Hoc
+\i /Users/doug/Documents/GitHub/threads/src/sql/postgressql/tmp.sql
+
+
+#command line to start on SQL Server
+
+DataSyncToolsServer.exe -dbty mssql -dbnm Tmp -dbpt 1433 -dbsv DJOWIN8ONMAC1\SQLEXPRESS -dbusr DJOWIN8ONMAC1\Doug
+./DataSyncToolsServer -dbty postgressql -dbnm threads -dbpt 5432 -dbsv localhost -dbusr doug
+
+
+\i /Users/doug/Documents/GitHub/threads/src/sql/common/show-pair-config-master.sql
+\i /Users/doug/Documents/GitHub/threads/src/sql/common/show-pair-config-detail.sql
