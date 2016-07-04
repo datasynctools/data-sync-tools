@@ -24,19 +24,20 @@
 
 # 0.9.x
 * Data Version Support
+* Change Notification Client
 
 # 0.10.x
 * Low hanging fruit performance optimizations (reduced network connectivity & improve caching)
 
 # 0.11.x
-* Filtered Sync
+* Filtered Sync for Partial Sync Support
 
 # 0.12.x
 * Security added: 1. Sync Session Creation (can't start a sync session between two nodes without authentication), 2. Sync Session Msgs (protect against node hoping: after being authenticated between two nodes, don't allow a client to trick the agent into updating data for a different node), 3. HTTP/S (TLS), 4. Protections against SQL Injection
 * Refactor designed (api concept matured)
 
-# 0.13.x - Threads Ready
-* Threads ready: bi-directional sync with auto-client registration, full and filtered data sync, sync security
+# 0.13.x - Release Candidate 1 Ready
+* bi-directional sync with auto-client registration, full and filtered data sync, sync security
 * Big Refactor for common Interfaces
 * All tests at >80%
 * Swift Client Interfaces for iOS 1.0 RC1
