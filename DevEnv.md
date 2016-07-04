@@ -12,7 +12,7 @@ for Winodws: "protoc --go_out=. -o schema.pb *.proto"
 for Mac: "protoc --go_out=. -o schema.pb \*.proto"
 5. Copy the file 'src/protobuf/DataSyncToolsAPI/Msgs/messages.pb.go' to 'src/go/src/datasync.tools/syncmsg/messages.pb.go' (replacing the existing file)
 6. Open 'src/go/src/datasync.tools/syncmsg/messages.pb.go' and edit the page name from 'package messages' to 'package syncmsg'
-7. Run the Build Steps.
+7. Run the [Build Steps](DevEnv.md#build-steps)
 
 ## Build Steps
 
