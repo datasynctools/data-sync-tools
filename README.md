@@ -1,6 +1,47 @@
 # DataSync.Tools
 
-Insert Intro here....
+DataSync.Tools provides data synchronization services. The capabilities roadmap includes:
+
+| Capability                   | Feature                   | Description | Target Release |
+| ---------------------------- | ------------------------- | ----------- | -------------- |
+| **Comprehensive Data Sync**  | Smart Persistence         | Where possible, hook into the pipeline of altering data data to optimize the sync flow via a Persistence Client                                     | 1.0             | 
+| Comprehensive Data Sync      | Communications Management | Abstract the developer from having to manage network communications through Sync Client & Agent                                                    | 1.0             | 
+| Comprehensive Data Sync      | Cluster Management        | APIs to manage metadata, nodes, sessions, maintenance mode (read/write, read only, disabled), and more                                              | 1.0             | 
+| Comprehensive Data Sync      | Partial Sync Support      | Allow data repositories with selective sync based on person, device type, or other configurable partial sync parameters                             | 1.0             | 
+| Comprehensive Data Sync      | Conflict Resolvers        | Common resolution strategies: NamedNodeWinner, TimeStampWinner(first,last), UserIntervension and Custom Conflict Resolver Plugins                  | 1.0             | 
+| **Rich Platform Support**    | Operating Platforms       | Support for multiple operating system | 1.0 | 
+| Rich Platform Support        | Databases                 | Support for multiple databases        | 1.0 |
+| Rich Platform Support        | Language APIs             | Support for Language APIs             | 1.0 |
+| **Security**                 | Authorization        | Sync (who can sync to whom), Cluster Management, Partial Sync | 1.0             | | Security                     | Authentication       | Sync (who can sync to whom), Cluster Management               | 1.0             |
+| Security                     | Encryption           | Sync Payload                                                  | 2.0             |
+| **Integrated Data Modeling** | Web-based Modeling             | Data modeling for synchronization is available through a web browser              | 2.0 |
+| Integrated Data Modeling     | Cross-Language Code Generators | Data modeling for synchronization generates code helper code in various langauges | 2.0 |
+| **Natural Message Queuing**  | Persistent Queue               | Reliably, Efficiently, and Asynchronously Send-Receive Msgs through persistence syntax                        | 3.0 |
+| Natural Message Queuing      | Configuralbe Sync vs. Queue | Persistence syntax is configurable external to the application for switching between sync and queue behavior | 3.0 |
+| Natural Message Queuing      | Expired Messages               | Queued Messages expire based on time | 3.0 |
+
+# Architecture Architecture
+
+Basic Terms:
+* **Sync Node** - a named data store (or parts of a data store) for syncing
+* **Sync Session** - a unique identifier used to gather statics and control a synchornization instance
+
+Major API Categories architectural areas:
+
+1. **Persistence Client** - packages up changes to a data store in an optimized sync format 
+
+1. **Change Client** - notifies an application sync node of changes 
+
+1. **Sync Client** - orchestrates the initiation and flow of a sync session as well as maintains sync state of a local sync node
+
+1. **Sync Agent** - handles sync client commands and maintains sync state for a local sync node
+
+# Code Examples
+## Persistence Client 
+Insert code example here....
+
+
+## 
 
 # Unit Test Server (Go Code)
 
