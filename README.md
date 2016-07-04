@@ -20,6 +20,8 @@ DataSync.Tools provides data synchronization services. The capabilities roadmap 
 | Natural Message Queuing      | Configuralbe Sync vs. Queue | Persistence syntax is configurable external to the application for switching between sync and queue behavior | 3.0 |
 | Natural Message Queuing      | Expired Messages               | Queued Messages expire based on time | 3.0 |
 
+For more details see [Roadmap](Roadmap.md)
+
 # Architecture Architecture
 
 Basic Terms:
