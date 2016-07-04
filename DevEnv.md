@@ -2,6 +2,12 @@
 
 # Building Sync Agent (Go Code)
 
+## Windows Pre-Requisites
+
+* Install [Github Desktop](https://desktop.github.com/) and configure it to your github account
+* Install [go](https://golang.org/dl/)
+* 
+
 ## Pre Build Steps
 
 1. If changes are made to the protocol buffers messages that affect file 'src/protobuf/DataSyncToolsApi/messages.pb.go', run steps 2-6
