@@ -4,7 +4,7 @@
 
 ## Pre Build Steps
 
-1. If first time compiling or changes are made to that affect file 'src/protobuf/DataSyncToolsApi/messages.pb.go', run steps 2-6
+1. If changes are made to the protocol buffers messages that affect file 'src/protobuf/DataSyncToolsApi/messages.pb.go', run steps 2-6
 2. Install go protocol buffers as instructed: https://github.com/golang/protobuf (only done once per dev environment).
 3. For convenience, add the installed protoc program to your path. Also see https://groups.google.com/forum/#!topic/golang-nuts/Qs8d56uavVs
 4. Open a command prompt to the "src/protobuf/DataSyncToolsApi" directory. Build the protocol buffers file:
