@@ -80,55 +80,6 @@ Insert code example here....
 # Useful Links
 
 * [Setting up a Development Enviornment](DevEnv.md)
+* [Testing](Testing.md)
+* [Miscellaneous](Misc.md)
 
-
-# Unit Test Server (Go Code)
-
-1. Change directories to the root source folder
-(e.g. '/Users/doug/Documents/GitHub/threads/src/go/DataSyncToolsServer/')
-2. Start server dependencies:
-	- Postgress Database
-	- Make sure database is installed (see 'src/sql/postgressql/create-database.sql'
-3. Run 'go test -cover'
-
-# Integration Test ClientServer (Swift-Go Code)
-
-1. Change directories to the root source folder
-(e.g. '/Users/doug/Documents/GitHub/threads/src/go/DataSyncToolsServer/')
-2. Start server dependencies:
-	- Postgress Database
-	- Make sure database is installed (see 'src/sql/postgressql/create-database.sql'
-3. Make Sure that test data is setup for dependencies:
-	- '/src/sql/postgressql/create-data-sync-tools.sql'
-	- '/src/sql/common/create-test-data.sql'
-	- ''
-3. Start Server './DataSyncToolsServer -dbusr doug -dbnm threads -dbpt 5432' or full command w/password as in './DataSyncToolsServer -dbusr doug -dbnm threads -dbpw myPw1 -dbpt 5432'
-4. Test that Server is up and running:
-	- 'http://localhost:8080/syncPairConfig/node1Name/A/node2Name/Z'
-	- Expected:
-	`{
-		pairId: "*pair-1",
-		pairName: "A <-> Z",
-		...
-		node1: {
-			nodeId: "*node-spoke1",
-			nodeName: "A",
-			enabled: true,'
-		...
-		}
-	}`
-
-
-# Notes for Data Sync Tools Doc
-
-Reserved Entity Names:
-* entityName - reason: reserved by core data (conflicts with NSManagedObject)
-* entity - reason: reserved by core data (conflicts with NSManagedObject)
-
-# Notes for debugging
-
-* iOS Core Data Model file: /Users/doug/Library/Developer/Xcode/DerivedData/DataSyncToolsCore-gskgwwwkeihspofdyurkdfblpzlr/Build/Products/Debug-iphonesimulator/DataSyncToolsCore.framework/TestModel.momd/TestModel.mom (where 'DataSyncToolsCore-gsk...' is the derived data folder for the project)
-* iOS Core Data sqllite file: /Users/doug/Library/Developer/CoreSimulator/Devices/C8ED699D-6309-4775-A4A2-18B2385C0338/data/Documents/TestModel.sqlite (where 'C8ED...' is the id of the device)
-
-#Tasks
-* Rationalize field name mapping
