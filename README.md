@@ -55,7 +55,7 @@ Major API Categories architectural areas:
 
 1. **Persistence Client** - packages up changes to a data store in an optimized sync format 
 
-1. **Change Client** - notifies an application sync node of changes from a Sync Client or Sync Agent 
+1. **Change Notification Client** - notifies an application sync node of changes from a Sync Client or Sync Agent 
 
 1. **Sync Client** - orchestrates the initiation and flow of a sync session as well as maintains sync state of a local sync node
 
