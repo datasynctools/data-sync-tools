@@ -6,7 +6,7 @@
 
 * Install [Github Desktop](https://desktop.github.com/) and configure it to your github account
 * Install [go](https://golang.org/dl/) and setup the enviornmental variable as illustrated in https://golang.org/doc/install#install and https://golang.org/doc/install#testing.
-* Install [data-sync-tools](https://github.com/datasynctools/data-sync-tools).
+* Install [data-sync-tools](https://github.com/datasynctools/data-sync-tools) fromto Github desktop.
 
 ## Pre Build Steps
 
