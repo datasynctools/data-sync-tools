@@ -1,0 +1,10 @@
+drop table sync_pair_data_versions;
+drop table sync_version_entities;
+drop table sync_data_version;
+drop table sync_pair_nodes;
+drop table sync_pair;
+drop table sync_data_version_map;
+drop table sync_peer_state;
+drop table sync_state;
+drop table sync_entity;
+drop table sync_node;
