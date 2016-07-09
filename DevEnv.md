@@ -1,8 +1,8 @@
 # Setting up a Development Enviornment
 
-# Building Sync Agent (Go Code)
+# Building Sync Agent (Go)
 
-## Windows Pre-Requisites
+## Windows Pre-Requisites (Go)
 
 * Install [Github Desktop](https://desktop.github.com/) and configure it to your github account
 * Install [go](https://golang.org/dl/) and setup the enviornmental variable as illustrated in https://golang.org/doc/install#install and https://golang.org/doc/install#testing.
@@ -11,7 +11,7 @@
 * Install [data-sync-tools](https://github.com/datasynctools/data-sync-tools) to Github desktop to the "src" directory of your GOPATH.   
   * hint: on windows, install to C:\Users\(UserName)\Documents\GitHub\src. When finished 'C:\Users\(UserName)\Documents\GitHub\src\data-sync-tools'
 
-## Pre Build Steps
+## Pre Build Steps (Go)
 
 1. If changes are made to the protocol buffers messages that affect file 'src/protobuf/DataSyncToolsApi/messages.pb.go', run steps 2-6. Else go to step 7
 2. Install go protocol buffers as instructed: https://github.com/golang/protobuf (only done once per dev environment).
@@ -27,7 +27,7 @@ go get github.com/gorilla/mux github.com/golang/protobuf/proto github.com/lib/pq
 ```
 8. go to [Build Steps](DevEnv.md#build-steps). 
 
-## Build Steps
+## Build Steps (Go)
 
 1. Change directories to 'go/cmd/DataSyncToolsAgent'
 (e.g. '/Users/(UserName)/Documents/GitHub/src/data-sync-tools/go/cmd/DataSyncToolsAgent/')
@@ -80,7 +80,7 @@ go build -o %GOPATH%/bin/windows_amd64/DataSyncToolsAgent.exe
 See https://golang.org/doc/install/source#environment for a listing of other environments.
 Other references: http://dave.cheney.net/2015/08/22/cross-compilation-with-go-1-5
 
-## Generate Server Documentation
+## Generate Agent Documentation (Go)
 
 godoc server rendered documentation:
 1. open up a command prompt
@@ -100,7 +100,7 @@ static documentation: (unfinished documentation)
 3. download and install 'https://github.com/alecthomas/gometalinter'
 4. run 'gometalinter | grep -v gotype | grep -v messages.pb.go'
 
-## Server Code Coverage
+## Agent Code Coverage (Go)
 
 Run the following 3 commands from 'synchandler':
 go test -coverprofile=../../../../../../../../Desktop/coverage.out
