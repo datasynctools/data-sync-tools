@@ -2,8 +2,8 @@ package syncdaopq
 
 // BUG(doug4j@gmail.com): Move this test file into a separate package, see https://medium.com/@matryer/5-simple-tips-and-tricks-for-writing-unit-tests-in-golang-619653f90742#.o8nxf7z53
 import (
-	"datasynctools/syncdao"
-	"datasynctools/testhelper"
+	"data-sync-tools/go/syncdao"
+	"data-sync-tools/go/testhelper"
 	"fmt"
 	"log"
 	"testing"

@@ -1,8 +1,8 @@
 package synchandler
 
 import (
-	"datasynctools/syncapi"
-	"datasynctools/syncmsg"
+	"data-sync-tools/go/syncapi"
+	"data-sync-tools/go/syncmsg"
 )
 
 type mockDataRepository struct {

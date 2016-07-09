@@ -1,7 +1,7 @@
 package syncmsg
 
 import (
-	"datasynctools/syncutil"
+	"data-sync-tools/go/syncutil"
 	"errors"
 	"fmt"
 	"time"

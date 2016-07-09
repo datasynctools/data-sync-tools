@@ -1,10 +1,10 @@
 package syncdaopq
 
 import (
-	"datasynctools/syncapi"
-	"datasynctools/syncmsg"
-	"datasynctools/syncutil"
-	"datasynctools/testhelper"
+	"data-sync-tools/go/syncapi"
+	"data-sync-tools/go/syncmsg"
+	"data-sync-tools/go/syncutil"
+	"data-sync-tools/go/testhelper"
 	"testing"
 
 	"github.com/golang/protobuf/proto"

@@ -3,8 +3,8 @@ package syncmsg
 // BUG(doug4j@gmail.com): Move this test file into a separate package, see https://medium.com/@matryer/5-simple-tips-and-tricks-for-writing-unit-tests-in-golang-619653f90742#.o8nxf7z53
 import (
 	"crypto/sha256"
-	//"datasynctools/syncutil"
-	//"datasynctools/syncdao"
+	//"data-sync-tools/go/syncutil"
+	//"data-sync-tools/go/syncdao"
 	"encoding/hex"
 	//"fmt"
 	"log"

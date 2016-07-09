@@ -1,7 +1,7 @@
 package syncapi
 
 // TODO(doug4j@gmail.com): Add an abstraction to the Protocol Buffers intefaces in 'messages.pb.go' in the syncmsg package.
-import "datasynctools/syncmsg"
+import "data-sync-tools/go/syncmsg"
 
 //MessageFetchingData defines the typical re-usable data for MessageFetching.
 type MessageFetchingData struct {

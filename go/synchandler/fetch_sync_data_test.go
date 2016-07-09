@@ -2,10 +2,10 @@ package synchandler
 
 // TODO(doug4j@gmail.com): Transition handler testing to use a mock/stub syncdao rather than syncdaopq
 import (
-	"datasynctools/syncapi"
-	"datasynctools/syncmsg"
-	"datasynctools/syncutil"
-	"datasynctools/testhelper"
+	"data-sync-tools/go/syncapi"
+	"data-sync-tools/go/syncmsg"
+	"data-sync-tools/go/syncutil"
+	"data-sync-tools/go/testhelper"
 	"errors"
 	"fmt"
 	"io"

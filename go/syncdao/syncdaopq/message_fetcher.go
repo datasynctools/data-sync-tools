@@ -2,9 +2,9 @@ package syncdaopq
 
 import (
 	"database/sql"
-	"datasynctools/syncapi"
-	"datasynctools/syncmsg"
-	"datasynctools/syncutil"
+	"data-sync-tools/go/syncapi"
+	"data-sync-tools/go/syncmsg"
+	"data-sync-tools/go/syncutil"
 	"encoding/hex"
 
 	"github.com/golang/protobuf/proto"

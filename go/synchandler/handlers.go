@@ -2,9 +2,9 @@
 package synchandler
 
 import (
-	"datasynctools/syncapi"
-	"datasynctools/syncdao"
-	"datasynctools/syncutil"
+	"data-sync-tools/go/syncapi"
+	"data-sync-tools/go/syncdao"
+	"data-sync-tools/go/syncutil"
 	"fmt"
 	"net/http"
 )

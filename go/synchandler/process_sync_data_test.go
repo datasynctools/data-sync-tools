@@ -2,10 +2,10 @@ package synchandler
 
 import (
 	"bytes"
-	"datasynctools/syncapi"
-	"datasynctools/syncmsg"
-	"datasynctools/syncutil"
-	"datasynctools/testhelper"
+	"data-sync-tools/go/syncapi"
+	"data-sync-tools/go/syncmsg"
+	"data-sync-tools/go/syncutil"
+	"data-sync-tools/go/testhelper"
 	"fmt"
 	"io/ioutil"
 	"net/http"

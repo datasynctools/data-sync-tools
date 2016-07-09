@@ -3,11 +3,11 @@ package main
 
 import (
 	"database/sql"
-	"datasynctools/syncapi"
-	"datasynctools/syncdao"
-	"datasynctools/syncdao/syncdaopq"
-	"datasynctools/synchandler"
-	"datasynctools/syncutil"
+	"data-sync-tools/go/syncapi"
+	"data-sync-tools/go/syncdao"
+	"data-sync-tools/go/syncdao/syncdaopq"
+	"data-sync-tools/go/synchandler"
+	"data-sync-tools/go/syncutil"
 	"flag"
 	"fmt"
 	"log"

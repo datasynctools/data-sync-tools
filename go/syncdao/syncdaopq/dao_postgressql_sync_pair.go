@@ -2,8 +2,8 @@ package syncdaopq
 
 import (
 	"database/sql"
-	"datasynctools/syncdao"
-	"datasynctools/syncutil"
+	"data-sync-tools/go/syncdao"
+	"data-sync-tools/go/syncutil"
 	"errors"
 	"log"
 	"time"

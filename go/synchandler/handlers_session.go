@@ -1,8 +1,8 @@
 package synchandler
 
 import (
-	"datasynctools/syncdao"
-	"datasynctools/syncutil"
+	"data-sync-tools/go/syncdao"
+	"data-sync-tools/go/syncutil"
 	"encoding/json"
 	//"fmt"
 	"github.com/gorilla/mux"

@@ -2,8 +2,8 @@ package syncdaopq
 
 import (
 	"database/sql"
-	"datasynctools/syncapi"
-	"datasynctools/syncutil"
+	"data-sync-tools/go/syncapi"
+	"data-sync-tools/go/syncutil"
 )
 
 //NewSyncMessagesFetcher creates an instance of the struct SyncMessagesFetcherType

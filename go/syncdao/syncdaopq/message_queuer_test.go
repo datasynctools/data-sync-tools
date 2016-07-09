@@ -1,9 +1,9 @@
 package syncdaopq
 
 import (
-	"datasynctools/syncapi"
-	"datasynctools/syncutil"
-	"datasynctools/testhelper"
+	"data-sync-tools/go/syncapi"
+	"data-sync-tools/go/syncutil"
+	"data-sync-tools/go/testhelper"
 	"fmt"
 	"log"
 	"testing"

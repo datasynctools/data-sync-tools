@@ -1,9 +1,9 @@
 package synchandler
 
 import (
-	"datasynctools/syncapi"
-	"datasynctools/syncmsg"
-	"datasynctools/syncutil"
+	"data-sync-tools/go/syncapi"
+	"data-sync-tools/go/syncmsg"
+	"data-sync-tools/go/syncutil"
 	"errors"
 	"fmt"
 	"io/ioutil"

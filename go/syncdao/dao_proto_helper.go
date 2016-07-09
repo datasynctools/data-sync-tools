@@ -3,8 +3,8 @@ package syncdao
 // TODO(doug4j@gmail.com): Move the contents in this go file to the syncmsg package.
 
 import (
-	"datasynctools/syncmsg"
-	"datasynctools/syncutil"
+	"data-sync-tools/go/syncmsg"
+	"data-sync-tools/go/syncutil"
 	"encoding/hex"
 	//"errors"
 	"github.com/golang/protobuf/proto"

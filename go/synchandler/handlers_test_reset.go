@@ -1,9 +1,9 @@
 package synchandler
 
 import (
-	"datasynctools/syncdao"
-	"datasynctools/syncutil"
-	"datasynctools/testhelper"
+	"data-sync-tools/go/syncdao"
+	"data-sync-tools/go/syncutil"
+	"data-sync-tools/go/testhelper"
 	"net/http"
 
 	"github.com/gorilla/mux"

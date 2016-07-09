@@ -1,6 +1,6 @@
 package syncapi
 
-import "datasynctools/syncmsg"
+import "data-sync-tools/go/syncmsg"
 
 //MessageProcessingData defines the typical re-usable data for MessageProcesing.
 type MessageProcessingData struct {
