@@ -25,7 +25,7 @@ for Mac: "protoc --go_out=. -o schema.pb \*.proto"
 ```
 go get github.com/gorilla/mux github.com/golang/protobuf/proto github.com/lib/pq github.com/twinj/uuid
 ```
-8. go to [Build Steps](DevEnv.md#build-steps). 
+8. go to [Build Steps](DevEnv.md#build-steps-go). 
 
 ## Build Steps (Go)
 
