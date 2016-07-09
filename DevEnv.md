@@ -27,10 +27,11 @@ for Mac: "protoc --go_out=. -o schema.pb \*.proto"
 1. Change directories to 'go/cmd/DataSyncToolsAgent'
 (e.g. '/Users/(UserName)/Documents/GitHub/src/data-sync-tools/go/cmd/DataSyncToolsAgent/')
 2. run the command
+for unix-based environments:
 ```
 go build -o ~/bin/DataSyncToolsAgent
 ```
-for unix-based environments or for windows
+for windows:
 ```
 go build -o %GOPATH%/bin/DataSyncToolsAgent.exe
 ```
