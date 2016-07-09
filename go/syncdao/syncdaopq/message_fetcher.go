@@ -40,7 +40,7 @@ type postgresSQLMessageFetcher struct {
 //in it should it be (Copied from SyncMessagesFetcher.Fetch() interface)
 func (fetcher postgresSQLMessageFetcher) Fetch(entities []syncapi.EntityNameItem, changeType syncapi.ProcessSyncChangeEnum) (*syncmsg.ProtoRequestSyncEntityMessageResponse, error) {
 	lastState := newFetchedState()
-	bindID := uuid.Formatter(uuid.NewV4(), uuid.CleanHyphen)
+	bindID := uuid.Formatter(uuid.NewV4(), uuid.FormatCanonical)
 	isDelete := *changeType.Enum() == syncapi.ProcessSyncChangeEnumDelete
 
 	answer := &syncmsg.ProtoRequestSyncEntityMessageResponse{}
@@ -156,7 +156,7 @@ func (fetcher postgresSQLMessageFetcher) processEntity(lastState *fetchedState, 
 		EntityPluralName: proto.String(entity.PluralName),
 	}
 	for true {
-		queueID := uuid.Formatter(uuid.NewV4(), uuid.CleanHyphen)
+		queueID := uuid.Formatter(uuid.NewV4(), uuid.FormatCanonical)
 		err := fetcher.reserveFetchItems(entity.SingularName, changeType, queueID)
 		if err != nil {
 			syncutil.Error(err)
