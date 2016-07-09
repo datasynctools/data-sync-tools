@@ -26,20 +26,27 @@ for Mac: "protoc --go_out=. -o schema.pb \*.proto"
 
 1. Change directories to 'go/cmd/DataSyncToolsAgent'
 (e.g. '/Users/(UserName)/Documents/GitHub/src/data-sync-tools/go/cmd/DataSyncToolsAgent/')
-2. run the command 'go build -o ~/bin/DataSyncToolsAgent' for unix-based environments or for windows 'go build -o %GOPATH%/bin/DataSyncToolsAgent.exe' to build for the platform of your compiler
-- The above assumes a unix-style operating system. Convention is to add '.exe' for windows
-- Point the -o path to your preferred output location as desired
+2. run the command
+```
+go build -o ~/bin/DataSyncToolsAgent
+```
+for unix-based environments or for windows
+```
+go build -o %GOPATH%/bin/DataSyncToolsAgent.exe
+```
 3. For additional platforms setup the environment like so with Linux arm, Linux 32-bit, Linux 64-bit, Mac 64-bit, Windows 32-bit, and Windows 64-bit respectively:
 
 Unix-style operation systems Example:
+```
 env GOOS=linux GOARCH=arm go build -o ~/bin/linux_arm/DataSyncToolsAgent
 env GOOS=linux GOARCH=386 go build -o ~/bin/linux_386/DataSyncToolsAgent
 env GOOS=linux GOARCH=amd64 go build -o ~/bin/linux_amd64/DataSyncToolsAgent
 env GOOS=darwin GOARCH=amd64 go build -o ~/bin/darwin_amd64/DataSyncToolsAgent
 env GOOS=windows GOARCH=386 go build -o ~/bin/windows_386/DataSyncToolsAgent.exe
 env GOOS=windows GOARCH=amd64 go build -o ~/bin/windows_amd64/DataSyncToolsAgent.exe
-
+```
 Placeholder documentation, not complete. WARNING: *DO NOT USE*. Windows Example:
+```
 set GOOS=linux
 set GOARCH=arm
 go build -o %GOPATH%/bin/linux_arm/DataSyncToolsAgent
@@ -62,10 +69,9 @@ set GOARCH=386 go build -o %GOPATH%/bin/windows_386/DataSyncToolsAgent.exe
 set env GOOS=windows
 set GOARCH=amd64
 go build -o %GOPATH%/bin/windows_amd64/DataSyncToolsAgent.exe
-
+```
 See https://golang.org/doc/install/source#environment for a listing of other environments.
-Other references:
-- http://dave.cheney.net/2015/08/22/cross-compilation-with-go-1-5
+Other references: http://dave.cheney.net/2015/08/22/cross-compilation-with-go-1-5
 
 ## Generate Server Documentation
 
