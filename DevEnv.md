@@ -5,8 +5,11 @@
 ## Windows Pre-Requisites
 
 * Install [Github Desktop](https://desktop.github.com/) and configure it to your github account
-* Install [go](https://golang.org/dl/) and setup the enviornmental variable as illustrated in https://golang.org/doc/install#install and https://golang.org/doc/install#testing. (hint: on windows, GOPATH=C:\Users\(UserName)\Documents\GitHub)
-* Install [data-sync-tools](https://github.com/datasynctools/data-sync-tools) to Github desktop to the "src" directory of your GOPATH. (hint: on windows, install to C:\Users\(UserName)\Documents\GitHub\src)
+* Install [go](https://golang.org/dl/) and setup the enviornmental variable as illustrated in https://golang.org/doc/install#install and https://golang.org/doc/install#testing. 
+  * hint: on windows, GOPATH=C:\Users\(UserName)\Documents\GitHub
+  * hint: on windows, add C:\Users\(UserName)\Documents\GitHub\bin to the windows PATH
+* Install [data-sync-tools](https://github.com/datasynctools/data-sync-tools) to Github desktop to the "src" directory of your GOPATH.   
+  * hint: on windows, install to C:\Users\(UserName)\Documents\GitHub\src. When finished 'C:\Users\(UserName)\Documents\GitHub\src\data-sync-tools'
 
 ## Pre Build Steps
 
