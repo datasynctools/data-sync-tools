@@ -13,7 +13,7 @@
 
 ## Pre Build Steps
 
-1. If changes are made to the protocol buffers messages that affect file 'src/protobuf/DataSyncToolsApi/messages.pb.go', run steps 2-6
+1. If changes are made to the protocol buffers messages that affect file 'src/protobuf/DataSyncToolsApi/messages.pb.go', run steps 2-6. Else go to [Build Steps](DevEnv.md#build-steps).
 2. Install go protocol buffers as instructed: https://github.com/golang/protobuf (only done once per dev environment).
 3. For convenience, add the installed protoc program to your path. Also see https://groups.google.com/forum/#!topic/golang-nuts/Qs8d56uavVs
 4. Open a command prompt to the "src/protobuf/DataSyncToolsApi" directory. Build the protocol buffers file:
@@ -21,7 +21,6 @@ for Winodws: "protoc --go_out=. -o schema.pb *.proto"
 for Mac: "protoc --go_out=. -o schema.pb \*.proto"
 5. Copy the file 'src/protobuf/DataSyncToolsAPI/Msgs/messages.pb.go' to 'src/go/src/datasync.tools/syncmsg/messages.pb.go' (replacing the existing file)
 6. Open 'src/go/src/datasync.tools/syncmsg/messages.pb.go' and edit the page name from 'package messages' to 'package syncmsg'
-7. Run the [Build Steps](DevEnv.md#build-steps)
 
 ## Build Steps
 
