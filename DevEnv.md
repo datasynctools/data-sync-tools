@@ -25,8 +25,8 @@ for Mac: "protoc --go_out=. -o schema.pb \*.proto"
 
 ## Build Steps
 
-1. Change directories to 'src/go/src/datasync.tools/cmd/DataSyncToolsServer'
-(e.g. '/Users/doug/Documents/GitHub/threads/src/go/src/datasync.tools/cmd/DataSyncToolsServer/')
+1. Change directories to 'go/cmd/DataSyncToolsServer'
+(e.g. '/Users/(UserName)/Documents/GitHub/src/data-sync-tools/go/cmd/DataSyncToolsServer/')
 2. run the command 'go build -o ~/bin/DataSyncToolsServer' to build for the platform of your compiler
 - The above assumes a unix-style operating system. Convention is to add '.exe' for windows
 - Point the -o path to your preferred output location as desired
