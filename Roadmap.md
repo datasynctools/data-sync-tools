@@ -8,7 +8,7 @@
   * Unit Tests with 80% Coverage - Started
   * Integration Tests with Detailed Verification 80% Coverage - Started
   * First cut Persistence client (iOS), Sync Client (iOS), Sync Agent (go)
-    * Persistence client (iOS) - Done
+    * Persistence Client (iOS) - Done
     * Sync Client (iOS) - Done
     * Sync Agent (go) - Done
 
@@ -116,26 +116,26 @@
 # Legend
 ## Operating System
 
-| Key | Name |
-| --- | --- |
-| LIN | Linux |
+| Key | Name    |
+| --- | ---     |
+| LIN | Linux   |
 | AND | Android |
-| IOS | iOS |
-| OXS | OSX |
+| IOS | iOS     |
+| OXS | OSX     |
 | WIN | Windows |
 
 ## Platforms (Architectures)
 
-| # | Name | Architecture |
-| -- | -- | -- |
-| LIN-X64 | Linux | amd64 |
-| LIN-X32 | Linux | x86 |
-| LIN-ARM | Linux | arm |
-| AND-ARM | Android | arm |
-| IOS-ARM | iOS | arm |
-| OSX-X64 | OSX | amd64 |
-| WIN-X64 | Windows | amd64 |
-| WIN-X32 | Windows | x86 |
+| Key      | Name    | Architecture |
+| :--------| ----    | ------------ |
+| LIN-X64  | Linux   | amd64        |
+| LIN-X32  | Linux   | x86          |
+| LIN-ARM  | Linux   | arm          |
+| AND-ARM  | Android | arm          |
+| IOS-ARM  | iOS     | arm          |
+| OSX-X64  | OSX     | amd64        |
+| WIN-X64  | Windows | amd64        |
+| WIN-X32  | Windows | x86          |
 
 ## Database Platforms, API, and Architectures
 | Key             | Name  | Operating System Key | Architecture # | API |
